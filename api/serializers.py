@@ -3,11 +3,29 @@ from rest_framework import serializers
 
 from .models.mango import Mango
 from .models.user import User
+from .models.patient import Patient
+from .models.doctor import Doctor
 
 class MangoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mango
         fields = ('id', 'name', 'color', 'ripe', 'owner')
+        
+class PatientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Patient
+        fields = ('id', 'first_name', 'last_name',
+                  'dob', 'street_address', 'city', 
+                  'state', 'allergies', 'created_at', 
+                  'updated_at', 'assigned_doctor')
+
+class DoctorSerializer(serializers.ModelSerializer):
+    # patient_list = PatientSerializer(many=True)
+    class Meta:
+        model = Doctor
+        fields = ('id', 'first_name', 'last_name',
+                  'email', 'specialty', 'created_at')
+
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
@@ -17,7 +35,7 @@ class UserSerializer(serializers.ModelSerializer):
         # get_user_model will get the user model (this is required)
         # https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#referencing-the-user-model
         model = get_user_model()
-        fields = ('id', 'email', 'password')
+        fields = ('id', 'email', 'first_name', 'last_name', 'is_nurse', 'password')
         extra_kwargs = { 'password': { 'write_only': True, 'min_length': 5 } }
 
     # This create method will be used for model creation
