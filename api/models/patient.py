@@ -22,7 +22,7 @@ class Patient(models.Model):
       Doctor,
       related_name='patient_list',
       on_delete=models.CASCADE,
-      blank=True
+      blank=True,
   )
 
   def __str__(self):

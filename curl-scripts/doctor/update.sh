@@ -5,11 +5,13 @@ curl "http://localhost:8000/doctors/${ID}/" \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token ${TOKEN}" \
+  --header "Accept: application/json; indent=4" \
   --data '{
-    "mango": {
-      "name": "'"${NAME}"'",
-      "color": "'"${COLOR}"'",
-      "ripe": "'"${RIPE}"'"
+    "doctor": {
+      "email": "'"${EMAIL}"'",
+      "first_name": "'"${FNAME}"'",
+      "last_name": "'"${LNAME}"'",
+      "specialty": "'"${SPECIALTY}"'"
     }
   }'
 

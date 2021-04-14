@@ -14,7 +14,7 @@ class MangoSerializer(serializers.ModelSerializer):
 class PatientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patient
-        fields = ('id', 'first_name', 'last_name',
+        fields = ('id', 'email', 'first_name', 'last_name',
                   'dob', 'street_address', 'city', 
                   'state', 'allergies', 'created_at', 
                   'updated_at', 'assigned_doctor')

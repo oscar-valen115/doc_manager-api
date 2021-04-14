@@ -10,7 +10,8 @@ curl "http://localhost:8000/patients/" \
       "email": "'"${EMAIL}"'",
       "first_name": "'"${FNAME}"'",
       "last_name": "'"${LNAME}"'",
-      "dob": "'"${DOB}"'"
+      "dob": "'"${DOB}"'",
+      "assigned_doctor": "'"${DOC}"'"
     }
   }'
 

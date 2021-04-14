@@ -3,6 +3,7 @@
 curl "http://localhost:8000/doctors/${ID}/" \
   --include \
   --request GET \
-  --header "Authorization: Token ${TOKEN}"
+  --header "Authorization: Token ${TOKEN}" \
+  --header "Accept: application/json; indent=4" \
 
 echo
