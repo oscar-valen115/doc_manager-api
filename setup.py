@@ -14,13 +14,13 @@ with open('LICENSE.md') as f:
     LICENSE = f.read()
 
 setup(
-    name='django-auth-template',
+    name='doc_manager-api',
     version='0.1.0',
-    description='GA SEI Boston Django Authentication Template',
+    description='doc_manager-api',
     long_description=README,
-    author='<author>',
-    author_email='<email>',
-    url='https://git.generalassemb.ly/ga-wdi-boston/django-auth-template',
+    author='Oscar Valenzuela',
+    author_email='oscar.valen115@gmail.com',
+    url='https://github.com/oscar-valen115/doc_manager-api',
     license=LICENSE,
     packages=find_packages(exclude=('tests', 'docs'))
 )
