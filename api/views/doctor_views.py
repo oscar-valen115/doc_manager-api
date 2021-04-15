@@ -6,7 +6,6 @@ from rest_framework import generics, status
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user, authenticate, login, logout
 from django.middleware.csrf import get_token
-# from rest_framework.renderers import JSONRenderer
 
 from ..models.doctor import Doctor
 from ..serializers import DoctorSerializer, UserSerializer
@@ -15,7 +14,6 @@ from ..serializers import DoctorSerializer, UserSerializer
 class Doctors(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticated,)
     serializer_class = DoctorSerializer
-    # renderer_classes = [JSONRenderer]
     def get(self, request):
         """Index request"""
         # Get all the mangos:
