@@ -4,6 +4,7 @@ curl "http://localhost:8000/doctors/" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
+  --header "Accept: application/json; indent=4" \
   --header "Authorization: Token ${TOKEN}" \
   --data '{
     "doctor": {
