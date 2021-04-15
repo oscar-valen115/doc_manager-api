@@ -18,6 +18,10 @@ pytz = "==2021.1"
 six = "==1.15.0"
 sqlparse = "==0.4.1"
 Django = "==3.0"
+google-api-python-client = "*"
+google-auth-httplib2 = "*"
+google-auth-oauthlib = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.9"
