@@ -27,6 +27,13 @@ if os.getenv('ENV') == 'development':
       'ENGINE': 'django.db.backends.postgresql',
       'NAME': 'doc_manager_db',
   }
+  
+  AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
   # Set debug to true
   DEBUG = True
   # Only allow locally running client at port 7165 for CORS
@@ -76,7 +83,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
