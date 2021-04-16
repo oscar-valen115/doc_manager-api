@@ -3,9 +3,9 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .models.user import User
 from .models.mango import Mango
-from .models.patient import Patient
-from .models.doctor import Doctor
 # from .models.appointment import Appointment
+from .models.doctor import Doctor
+from .models.patient import Patient
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
