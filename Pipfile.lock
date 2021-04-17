@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f133cc44fb44e7b3e60dcf9a52dba6bf5b960ff197da72ec94ec4621867f3a41"
+            "sha256": "98be12f4b39ed11244cc64523e87c0283040fa8f51df87b337de40e922821a4f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -230,6 +230,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.10"
+        },
+        "jsonpickle": {
+            "hashes": [
+                "sha256:0be49cba80ea6f87a168aa8168d717d00c6ca07ba83df3cec32d3b30bfe6fb9a",
+                "sha256:c1010994c1fbda87a48f8a56698605b598cb0fc6bb7e7927559fc1100e69aeac"
+            ],
+            "index": "pypi",
+            "version": "==2.0.0"
         },
         "oauthlib": {
             "hashes": [
