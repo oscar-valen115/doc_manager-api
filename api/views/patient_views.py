@@ -29,7 +29,6 @@ class Patients(generics.ListCreateAPIView):
         # Add user to request data object
         # Serialize/create patient
         patient = PatientSerializer(data=request.data['patient'])
-        # If the mango data is valid according to our serializer...
         if patient.is_valid():
             # Save the created patient & send a response
             patient.save()
