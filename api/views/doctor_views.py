@@ -34,6 +34,7 @@ class Doctors(generics.ListCreateAPIView):
             doctor.save()
             return Response({ 'doctor': doctor.data }, status=status.HTTP_201_CREATED)
         # If the data is not valid, return a response with the errors
+        print(doctor.errors)
         return Response(doctor.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class DoctorDetail(generics.RetrieveUpdateDestroyAPIView):
