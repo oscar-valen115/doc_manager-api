@@ -23,6 +23,14 @@ Back-End Repo: https://github.com/oscar-valen115/doc_manager-api
 - [Heroku](https://www.heroku.com)
 
 ## Entity Relationship Diagram  
-  
-  
+
 ![ERD](./staticfiles/admin/img/Capstone_Office_Assistant_ERD.jpg)
+
+## Wireframes
+
+![wireframe_login](./staticfiles/admin/img/Capstone_Office_Assistant_Wireframe_login.jpg)  
+![wireframe_login](./staticfiles/admin/img/Capstone_Office_Assistant_Wireframe_landing_page.jpg)  
+![wireframe_daily_appts](./staticfiles/admin/img/Capstone_Office_Assistant_Wireframe_daily_appts.jpg)
+![wireframe_daily_appts](./staticfiles/admin/img/Capstone_Office_Assistant_Wireframe_all_patients.jpg)
+![wireframe_daily_appts](./staticfiles/admin/img/Capstone_Office_Assistant_Wireframe_patient_profile.jpg)  
+
