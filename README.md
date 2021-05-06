@@ -22,5 +22,7 @@ Back-End Repo: https://github.com/oscar-valen115/doc_manager-api
 - [Google Calendar API](https://developers.google.com/calendar)
 - [Heroku](https://www.heroku.com)
 
-## Entity Relationship Diagram
-![Capstone_Office_Assistant_ERD](admin/Capstone_Office_Assistant_ERD.png)
+## Entity Relationship Diagram  
+  
+  
+![ERD](./staticfiles/admin/img/Capstone_Office_Assistant_ERD.jpg)
