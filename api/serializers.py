@@ -63,3 +63,6 @@ class ChangePasswordSerializer(serializers.Serializer):
     model = get_user_model()
     old = serializers.CharField(required=True)
     new = serializers.CharField(required=True)
+
+class CalendarSerializer(serializers.Serializer):
+    pass
