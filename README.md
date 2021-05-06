@@ -46,3 +46,12 @@ GET | patients/ | N/A | token | 200, OK | get all patients
 POST | patients/ | patient data | token | 201, Created | create patient
 PATCH| patients/{patientId}/ | patient data | token | 204, No Content | update patient
 DELETE | patients/ | N/A | token | 204, No Content | delete patient 
+  
+### Doctor
+
+Verb | URI | Body | Headers | Status Response | Body Response
+--- | --- | --- | --- | --- | ---
+GET | doctors/ | N/A | token | 200, OK | get all doctors
+POST | doctors/ | patient data | token | 201, Created | create patient
+PATCH| doctors/{doctorId}/ | patient data | token | 204, No Content | update patient
+DELETE | doctors/ | N/A | token | 204, No Content | delete patient  
