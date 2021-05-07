@@ -7,10 +7,11 @@ from .patient import Patient
 class Appointment(models.Model):
   """Appointment class model """
   date = models.DateField(blank=True)
-  time = models.DateTimeField(auto_now_add=True)
+  time = models.TimeField(blank=True)
   # patient = models.ForeignKey()
   # doctor = models.ForeignKey()
-  url = models.CharField(max_length=100, blank=True)
+  event_url = models.URLField(blank=True)
+  attendees_email = models.EmailField(blank=True)
   reason_for_appt = models.CharField(max_length=100, blank=True)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
