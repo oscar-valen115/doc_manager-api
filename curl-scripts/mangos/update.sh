@@ -5,12 +5,12 @@ curl "http://localhost:8000/mangos/${ID}/" \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token ${TOKEN}" \
-  --data '{
+  --data "{
     "mango": {
       "name": "'"${NAME}"'",
       "color": "'"${COLOR}"'",
       "ripe": "'"${RIPE}"'"
     }
-  }'
+  }"
 
 echo

@@ -7,10 +7,15 @@ curl "http://localhost:8000/patients/${ID}/" \
   --header "Accept: application/json; indent=4" \
   --header "Authorization: Token ${TOKEN}" \
   --data '{
-    "mango": {
-      "name": "'"${NAME}"'",
-      "color": "'"${COLOR}"'",
-      "ripe": "'"${RIPE}"'"
+    "patient": {
+      "first_name": "'"${FNAME}"'",
+      "last_name": "'"${LNAME}"'",
+      "email": "'"${EMAIL}"'",
+      "dob": "'"${DOB}"'",
+      "street_address": "'"${SADDRESS}"'",
+      "city": "'"${CITY}"'",
+      "state": "'"${STATE}"'",
+      "allergies": "'"${ALLERGIES}"'"
     }
   }'
 

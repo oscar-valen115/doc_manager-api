@@ -9,7 +9,7 @@ class Patient(models.Model):
   # https://docs.djangoproject.com/en/3.0/ref/models/fields/
   email = models.EmailField(max_length=255, unique=True, blank=True)
   first_name = models.CharField(max_length=100)
-  last_name = models.CharField(max_length=100)
+  last_name = models.CharField(max_length=100, blank=True)
   dob = models.DateField(blank=True)
   street_address = models.CharField(max_length=200, blank=True)
   city = models.CharField(max_length=100, blank=True)
@@ -35,6 +35,7 @@ class Patient(models.Model):
         'id': self.id,
         'first_name': self.first_name,
         'last_name': self.last_name,
+        'email': self.email,
         'dob': self.dob,
         'street_address': self.street_address,
         'city': self.city,

@@ -38,6 +38,7 @@ class Patients(generics.ListCreateAPIView):
 
 class PatientDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=(IsAuthenticated,)
+    serializer_class = PatientSerializer
     def get(self, request, pk):
         """Show request"""
         # Locate the mango to show
@@ -55,27 +56,17 @@ class PatientDetail(generics.RetrieveUpdateDestroyAPIView):
 
     def partial_update(self, request, pk):
         """Update Request"""
-        # Remove owner from request object
-        # This "gets" the owner key on the data['mango'] dictionary
-        # and returns False if it doesn't find it. So, if it's found we
-        # remove it.
-        # if request.data['mango'].get('owner', False):
-        #     del request.data['mango']['owner']
-
-        # Locate Patient
-        # get_object_or_404 returns a object representation of our Mango
+        print('request data: ', request.data)
         patient = get_object_or_404(Patient, pk=pk)
-        # Check if user is the same as the request.user.id
-        # if not request.user.id == mango.owner.id:
-        #     raise PermissionDenied('Unauthorized, you do not own this mango')
-
-        # Add owner to data object now that we know this user owns the resource
-        # request.data['mango']['owner'] = request.user.id
-        # Validate updates with serializer
-        data = PatientSerializer(patient, data=request.data['patient'])
-        if data.is_valid():
+        data = request.data['patient']
+        # data = request.data
+        print('data info: ', data)
+        patientData = PatientSerializer(patient, data=data, partial=True)
+        print('patientData serialized: ', patientData)
+        if patientData.is_valid():
             # Save & send a 204 no content
-            data.save()
+            patientData.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
         # If the data is not valid, return a response with the errors
-        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+        # print(patientData.errors)
+        return Response(patientData.errors, status=status.HTTP_400_BAD_REQUEST)
