@@ -17,7 +17,8 @@ class PatientSerializer(serializers.ModelSerializer):
         fields = ('id', 'email', 'first_name', 'last_name',
                   'dob', 'street_address', 'city', 
                   'state', 'allergies', 'created_at', 
-                  'updated_at', 'assigned_doctor')
+                  'updated_at', 'assigned_doctor', 'sex',
+                  'status', 'zip_code')
 
 class DoctorSerializer(serializers.ModelSerializer):
     # patient_list = PatientSerializer(many=True)
