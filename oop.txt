@@ -1,0 +1,82 @@
+######################
+#    OOP Python      #
+######################
+
+Class methods
+##############
+
+- this method is not acting on behalf of one instance of a 'Person'. It's meant to be called on the class itself.
+- So like in the case below, return the number of people that are associated with this class.
+
+EX below
+class Person:
+  number_of_people = 0
+  GRAVITY = -9.5
+  def __init__(self, name):
+    self.name = name
+    Person.add_person() # we're using our class method below to add to the number of people.
+  
+  @classmethod #decorator to denote this method is specifically a class method
+  def number_of_people_(cls):
+    return cls.number_of_people()
+    
+  @classmethod # this will add 1 to the total number of people in the class itself.
+  def add_person(cls):
+    cls.number_of_people += 1
+
+
+Static Methods
+###############
+
+- When you want to create classes that organize functions together that are not specific to an instance.
+
+ 
+EX below
+
+class Math:
+  
+  @staticmethod
+  def add5(x):
+    return x + 5
+print(Math.add5(5))
+# value should be 10
+
+
+LEBG Rule:
+- L:Local - Names assigned in any way within a function (def or lambda), and not declared global in that function
+- E:Enclosing function locals - Names in the local scope of any and all enclosing functions (def or lambda), from inner to outer
+- G:Global - Names assigned at the top-level of a module file, or declared global in a def within the file.
+- B:Built in(Python) - Names preassigned in the built-in names module : open, range, SyntaxError,...
+
+
+
+Random module
+################
+EX list used.
+mylist = list(range(0,20))
+
+# Sampe with replacement
+random.choices(population=mylist, k=10)
+
+# SAMPLE WITH REPLACEMENT
+##########################
+- allowing the same item to be chosen more than once
+EX. 
+random.choices(population=mylist, k=10)
+
+# SAMPLE WITHOUT REPLACEMENT
+#############################
+- once i've chosen a number, i can't pick it again.
+EX.
+random.sample(population=mylist, k=10)
+
+# Shuffle a list 
+##################
+- permanently shuffles a list in place.
+EX. 
+random.shuffle(mylist)
+
+#####################
+#  PYTHON DEBUGGER  #
+#####################
+
