@@ -9,16 +9,17 @@ class Patient(models.Model):
   INACTIVE = 'inactive'
   CHECK_IN = 'check_in'
   CHECK_OUT = 'check_out'
-  MALE = 'M'
-  FEMALE = 'F'
+  MALE = 'male'
+  FEMALE = 'female'
+  NA = ''
   status_choices = [(INACTIVE, 'inactive'), (CHECK_IN, 'check_in'), (CHECK_OUT, 'check_out')]
-  sex_choices = [(MALE, 'Male'), (FEMALE, 'Female')]
+  gender_choices = [(MALE, 'Male'), (FEMALE, 'Female')]
   email = models.EmailField(max_length=255, unique=True, blank=True)
   first_name = models.CharField(max_length=100)
   last_name = models.CharField(max_length=100, blank=True)
   dob = models.DateField(blank=True)
   status = models.CharField(max_length=10, choices=status_choices, default=INACTIVE)
-  sex = models.CharField(max_length=10, choices=sex_choices, blank=True)
+  gender = models.CharField(max_length=10, choices=gender_choices, blank=True)
   street_address = models.CharField(max_length=200, blank=True)
   city = models.CharField(max_length=100, blank=True)
   state = models.CharField(max_length=100, blank=True)
@@ -32,7 +33,6 @@ class Patient(models.Model):
       on_delete=models.CASCADE,
       blank=True,
   )
-
   def __str__(self):
     # This must return a string
     return f"The patient named '{self.first_name} {self.last_name}' date of birth is {self.dob}. They reside at {self.street_address}, {self.city}, {self.state}. They are allergic to {self.allergies}."
@@ -45,7 +45,7 @@ class Patient(models.Model):
         'last_name': self.last_name,
         'email': self.email,
         'dob': self.dob,
-        'sex': self.sex,
+        'gender': self.gender,
         'street_address': self.street_address,
         'city': self.city,
         'state': self.state,

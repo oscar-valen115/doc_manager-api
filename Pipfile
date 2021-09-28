@@ -23,6 +23,8 @@ google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
 whitenoise = "*"
 google-cloud-storage = "*"
+datetime = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.9"

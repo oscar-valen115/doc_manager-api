@@ -47,9 +47,9 @@ class PatientDetail(generics.RetrieveUpdateDestroyAPIView):
         """Update Request"""
         patient = get_object_or_404(Patient, pk=pk)
         data = request.data['patient']
-        print('data before serialization: ', data)
+        # print('data before serialization: ', data)
         patientData = PatientSerializer(patient, data=data, partial=True)
-        print('patientData serialized: ', patientData)
+        # print('patientData serialized: ', patientData)
         if patientData.is_valid():
             patientData.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
