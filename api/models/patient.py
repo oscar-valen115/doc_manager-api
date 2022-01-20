@@ -29,8 +29,9 @@ class Patient(models.Model):
   updated_at = models.DateTimeField(auto_now=True)
   assigned_doctor = models.ForeignKey(
       Doctor,
-      related_name='patient_list',
-      on_delete=models.CASCADE,
+      models.SET_NULL,
+      related_name='assigned_doctor',
+      null=True,
       blank=True,
   )
   def __str__(self):
@@ -52,6 +53,7 @@ class Patient(models.Model):
         'zip_code': self.zip_code,
         'status': self.status,
         'allergies': self.allergies,
+        'assigned_doctor': self.assigned_doctor,
         'created_at': self.created_at,
         'updated_at': self.updated_at,
     }

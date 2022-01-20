@@ -11,14 +11,6 @@ class MangoSerializer(serializers.ModelSerializer):
         model = Mango
         fields = ('id', 'name', 'color', 'ripe', 'owner')
         
-class PatientSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Patient
-        fields = ('id', 'email', 'first_name', 'last_name',
-                  'dob', 'street_address', 'city', 
-                  'state', 'allergies', 'created_at', 
-                  'updated_at', 'assigned_doctor', 'gender',
-                  'status', 'zip_code', 'created_at')
 
 class DoctorSerializer(serializers.ModelSerializer):
     # patient_list = PatientSerializer(many=True)
@@ -27,7 +19,17 @@ class DoctorSerializer(serializers.ModelSerializer):
         fields = ('id', 'first_name', 'last_name',
                   'email', 'specialty', 'created_at')
 
-
+class PatientSerializer(serializers.ModelSerializer):
+    # assigned_doctor = DoctorSerializer(required=False)
+    # assigned_doctor = Patient.assigned_doctor.doctor.all()
+    class Meta:
+        model = Patient
+        fields = ('id', 'email', 'first_name', 'last_name',
+                  'dob', 'street_address', 'city', 
+                  'state', 'allergies', 'created_at', 
+                  'updated_at', 'assigned_doctor', 'gender',
+                  'status', 'zip_code', 'created_at')
+        # depth=1
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
     # The login serializer also inherits from this serializer
