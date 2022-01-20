@@ -2,7 +2,9 @@
 
 ## Background
 
-Doc Manager was built to provide doctor's offices an easy to use application to manage regular tasks at a medical office. You can create new patient records, add doctors, and schedule appointments through google calendar API calls all with an easy to use interface.
+Doc Manager was built to provide doctor's offices an easy to use application to manage regular tasks at a medical office. You can create new patient records and add doctors.
+
+Currently working on the integration with Google Calendar API to be able to schedule appointments using Google Calendar.
 
 ## Production Application
 
@@ -59,6 +61,7 @@ POST | doctors/ | patient data | token | 201, Created | create patient
 PATCH| doctors/{doctorId}/ | patient data | token | 204, No Content | update patient
 DELETE | doctors/ | N/A | token | 204, No Content | delete patient  
 
+<!--
 ### Calendar
 
 Verb | URI | Body | Headers | Status Response | Body Response
@@ -67,3 +70,4 @@ GET | calendar/ | N/A | token | 200, OK | get all calendar events
 POST | calendar/ | patient data | token | 201, Created | create calendar event
 PATCH| calendar/{calendarId}/ | patient data | token | 204, No Content | update calendar event
 DELETE | calendar/ | N/A | token | 204, No Content | delete calendar event  
+-->
