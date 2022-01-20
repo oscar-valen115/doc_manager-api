@@ -17,7 +17,10 @@ class Patients(generics.ListCreateAPIView):
     def get(self, request):
         """Index request"""
         patients = Patient.objects.all()
+        # print('patients retrieved data: ', patients)
         data = PatientSerializer(patients, many=True).data
+        # print('Variable data retrieved info:', data)
+        print('Assigned Doctor retrieved info:', data)
         return Response({ 'patients': data })
 
     def post(self, request):
@@ -47,7 +50,7 @@ class PatientDetail(generics.RetrieveUpdateDestroyAPIView):
         """Update Request"""
         patient = get_object_or_404(Patient, pk=pk)
         data = request.data['patient']
-        # print('data before serialization: ', data)
+        print('data before serialization: ', data)
         patientData = PatientSerializer(patient, data=data, partial=True)
         # print('patientData serialized: ', patientData)
         if patientData.is_valid():
